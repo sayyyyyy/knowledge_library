@@ -23,6 +23,7 @@ app.secret_key = 'user_id'
 app.secret_key = 'list_id'
 app.secret_key = 'page_id'
 app.secret_key = 'search'
+app.secret_key = 'search_list'
 app.secret_key = 'name'
 app.secret_key = 'list_user_id'
 
@@ -52,6 +53,7 @@ def home():
         # 検索機能
         if request.form.get("search_ok") == "Search!":
             if request.form.get("search"):
+                session["search"] = request.form.get("search")
                 sqlite = sqlite3.connect('knowledge_library.db')
                 db = sqlite.cursor()
                 search = db.execute("SELECT tag, list_title FROM list")
@@ -68,7 +70,7 @@ def home():
                     if request.form.get("search") in i[0]:
                         #return i[1]
                         sin_page_list.append(i[1])
-                session["search"] = sin_page_list
+                session["search_list"] = sin_page_list
                 return redirect("/search")
             else:
                 return render_template("error.html", error_detail="Search", error_message="検索内容を入力してください")
@@ -491,7 +493,7 @@ def search():
                     sqlite.close()
                     return redirect("/list")
     else:
-        return render_template("search.html", is_search=request.form.get("search_page"), search_list=session["search"], username=username2)
+        return render_template("search.html", is_search=session["search"], search_list=session["search_list"], username=username2)
 
 if __name__ == "__main__":
     app.run(host='localhost', port=3000, threaded=True)    
