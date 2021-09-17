@@ -1,7 +1,7 @@
 # Knowledge Library
 
 ## VIDEO DEMO
-<>
+https://www.youtube.com/watch?v=iEbx33zeabA
 
 ## Producer
 College students living in Japan
@@ -25,7 +25,7 @@ People who study hard
 ## Why I MADE IT
 The background to creating this project can be tedious to search the same page over and over while researching. In addition, there are sites where you cannot tell at a glance what you have searched for in bookmarks. We have developed this web app to solve these problems.
 
-## DESCRIPTION :
+## DESCRIPTION
 This project is an application that allows you to save and search URLs, titles, comments, etc. on the site, and is an extended version of bookmarks.
 
 ## FUNCTION
@@ -40,6 +40,8 @@ This project is an application that allows you to save and search URLs, titles, 
 - Changes to google chrome extensions
 - Use voice input when searching
 - Don't get any more notifications without clicking the notification a few times
+- E-mail will be treated as junk e-mail, so I want to avoid it
+
 ## DATABASE
 - User table
     - id    : this is user id
@@ -85,6 +87,3 @@ This project is an application that allows you to save and search URLs, titles, 
     - Page can add a list
 - Add page Page
     - Page can add a page
-
-
-ファイルは最低でも複数の段落で構成され、プロジェクトの内容、プロジェクト用に作成した各ファイルの内容と機能、また特定の設計を採用するか否かを議論した場合はその理由を説明する必要があります。自分が誇りに思えるREADME.mdを書くのに十分な時間とエネルギーを割り当て、プロジェクトを完全に文書化してください。自信を持ちましょう！
