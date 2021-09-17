@@ -1,11 +1,10 @@
 import os
 from flask import Flask, redirect, render_template, request, session
-from flask.sessions import SessionInterface
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
-import sched
-import smtplib
+#import sched
+#import smtplib
 import time
 from email.mime.text import MIMEText
 
