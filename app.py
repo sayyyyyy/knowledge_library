@@ -12,12 +12,12 @@ from email.mime.text import MIMEText
 app = Flask(__name__)
 
 # メール送信設定
-smtp_host = 'smtp.gmail.com'
-smtp_port = 465
-username = 'd958956a6b650@gmail.com'
-password = 'aokiseiya11'
-smtp = smtplib.SMTP_SSL(smtp_host, smtp_port)
-smtp.login(username, password)
+#smtp_host = 'smtp.gmail.com'
+#smtp_port = 465
+#username = ''
+#password = ''
+#smtp = smtplib.SMTP_SSL(smtp_host, smtp_port)
+#smtp.login(username, password)
 
 # session設定
 app.secret_key = 'user_id'
@@ -322,15 +322,16 @@ def add_page():
             email = email_set.fetchone()[0]
             sqlite.close()
 
-            redirect_home()
-            time.sleep(1)
-            s = sched.scheduler()
-            s.enter(1, 1, notification_send, argument=(title, request.form.get("url"), comment, name, email))
+            #通知送信処理
+            #redirect_home()
+            #time.sleep(1)
+            #s = sched.scheduler()
+            #s.enter(1, 1, notification_send, argument=(title, request.form.get("url"), comment, name, email))
             #s.enter(86400, 1, notification_send, argument=(title, url, comment, name, email))
             #s.enter(172800, 2, notification_send, argument=(title, url, comment, name, email))
             #s.enter(604800, 3, notification_send, argument=(title, url, comment, name, email))
             #s.enter(2592000, 4, notification_send, argument=(title, url, comment, name, email))
-            s.run()
+            #s.run()
         return redirect("/")
         
 
