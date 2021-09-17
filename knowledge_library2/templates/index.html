@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+    Home
+{% endblock %}
+
+{% block main %}
+    <form action ="/" method ="POST">
+        <div class ="form-group">
+            <input autocomplete="off" name="search" placeholder="Search" type="text">
+            <input name ="search_ok" type="submit" value="Search!">
+        </div>
+        {% for i in page_list %}
+            <div class ="form-group max-set">
+                <button class ="index-list" name ="send" type ="submit" value ={{i[1]}}>List title: {{i[1]}}<br>Tag: {{i[0]}}</button>
+            </div>
+        {% endfor %}
+        <p><a class ="a-button" href ="add_list">リストを追加する</a></p>
+    </form>
+{% endblock %}

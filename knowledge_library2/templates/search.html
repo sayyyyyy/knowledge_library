@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+    {{list_title}}
+{% endblock %}
+
+{% block main %}
+<p class="list-title">Search Results : {{is_search}}</p>
+    <form action="/search" method="post">
+       {% for i in search_list %}
+            <div class ="form-group">
+                <input class ="index-list" name ="search_page" type ="submit" value ={{i}}>
+            </div>
+        {% endfor %}
+    </form>
+{% endblock %}

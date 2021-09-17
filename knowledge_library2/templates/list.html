@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+    {{list_title}}
+{% endblock %}
+
+{% block main %}
+    <p class="list-title">LIST : {{list_title}}</p>
+    {% if other_user %}
+        <p class ="list-title">User : {{other_user}}</p>
+    {% else %}
+        <p class ="list-title">User : You</p>
+    {% endif %}
+    <hr>
+    <form action ="/list" method ="POST">
+        {% for i in page_title %}
+        <div class ="form-group">
+            <button class ="index-list" name ="list" type ="submit" value ={{i[2]}} id={{i[2]}}>Title: {{i[2]}}<br>Comment: {{i[1]}}
+        </div>
+        {% endfor %}
+        <div class ="form-group" style="display:inline-flex">
+            <input class ="a-button-reset"name ="list_delete" type ="submit" value ="リストを削除する">
+            <p>　　</p>
+            <p><a href ="add_page" class="a-button">ページを追加する</a></p>
+        </div>
+    </form>
+{% endblock %}

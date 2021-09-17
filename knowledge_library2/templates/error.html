@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{error_detail}} Error
+{% endblock %}
+
+{% block main %}
+    <img class ="error-img" src="static/sry.png">
+    <p class ="error-msg">{{error_message}}</p>
+{% endblock %}

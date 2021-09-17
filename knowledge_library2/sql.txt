@@ -1,0 +1,43 @@
+CREATE TABLE user (
+id INTEGER,
+name TEXT NOT NULL,
+email TEXT NOT NULL,
+password TEXT NOT NULL,
+change_pass INTEGER DEFAULT 0,
+time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(id)
+)
+
+change_pass: 0 -> 変更不可 1 -> 変更可
+
+CREATE TABLE list (
+id INTEGER,
+tag LIST DEFAULT ["Knowledge_library"],
+list_title TEXT NOT NULL,
+user_id INTEGER NOT NULL,
+FOREIGN KEY(user_id) REFERENCES user(id),
+PRIMARY KEY(id)
+)
+
+CREATE TABLE page (
+id INTEGER,
+tag LIST DEFAULT ["Knowledge_library"],
+url TEXT NOT NULL,
+page_title TEXT NOT NULL,
+comment TEXT NOT NULL,
+notification INTEGER DEFAULT 0,
+time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+user_id INTEGER NOT NULL,
+list_id INTEGER NOT NULL,
+FOREIGN KEY(user_id) REFERENCES user(id),
+FOREIGN KEY(list_id) REFERENCES list(id),
+PRIMARY KEY(id)
+)
+
+notification: 0 -> 通知オフ 1 -> 通知オン
+
+データ追加（全てのカラムに）
+INSERT INTO テーブル名 VALUES(値, 値,・・・)
+
+データ追加(特定のカラムに)
+INSERT INTO テーブル名(カラム１, カラム２,・・・) VALUES(値, 値,・・・)
