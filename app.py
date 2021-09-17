@@ -242,7 +242,7 @@ def logout():
     return render_template("logout.html")
 
 # 通知機能を実装
-def notification_send(title, url, comment, name, email):
+#def notification_send(title, url, comment, name, email):
     message = "<strong><font color =#a59aca>" + name + "</font></strong> Did you forget? Click below to see the Page!<br><br><u>Title : </u><strong>" + title + "</strong><br>" + url + "<br><br> <u>Comment :</u> " + comment
             
     msg = MIMEText(message, "html")
@@ -409,11 +409,11 @@ def lost_password():
             message = """パスワードを変更する場合は以下のURLをクリックしてください
                         http://127.0.0.1:5000/change_password
                         """
-            msg = MIMEText(message, "html")
-            msg["Subject"] = "パスワード変更"
-            msg["To"] = request.form.get("email")
-            msg["From"] = "d958956a6b650@gmail.com"
-            smtp.send_message(msg)
+            #msg = MIMEText(message, "html")
+            #msg["Subject"] = "パスワード変更"
+            #msg["To"] = request.form.get("email")
+            #msg["From"] = "メールアドレス"
+            #smtp.send_message(msg)
             
             return redirect("/login")
         else:

@@ -1,5 +1,9 @@
 # Knowledge Library
 
+## Site
+http://knowledge-library.azurewebsites.net/
+通知機能は省いてあります
+
 ## VIDEO DEMO
 https://www.youtube.com/watch?v=iEbx33zeabA
 
